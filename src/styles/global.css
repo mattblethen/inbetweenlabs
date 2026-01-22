@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+:root{
+  color-scheme: dark;
+
+  --bg: #070A10;
+  --bg2: #0B0F14;
+
+  --cyan: #00D6FF;
+  --indigo: #6F4CFF;
+  --violet: #7A2BFF;
+
+  --panel: rgba(255,255,255,0.06);
+  --panel2: rgba(255,255,255,0.04);
+  --border: rgba(255,255,255,0.10);
+
+  --ink: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.70);
+  --muted2: rgba(255,255,255,0.55);
+}
+
+html, body { height: 100%; }
+
+body{
+  margin: 0;
+  background:
+    radial-gradient(1100px 720px at 15% 10%, rgba(111,76,255,0.16), transparent 56%),
+    radial-gradient(920px 640px at 86% 22%, rgba(0,214,255,0.12), transparent 55%),
+    radial-gradient(880px 620px at 50% 90%, rgba(122,43,255,0.08), transparent 58%),
+    linear-gradient(180deg, var(--bg), var(--bg2));
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+a { color: inherit; text-decoration: none; }
+::selection { background: rgba(0, 214, 255, 0.22); }
+
+/* IMPORTANT: make container work even if Tailwind fails */
+.container {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+/* Glass card baseline */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.glow {
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.06),
+    0 24px 80px rgba(0, 214, 255, 0.08),
+    0 18px 60px rgba(111, 76, 255, 0.08);
+}
+
+/* Buttons */
+.btn-primary{
+  background: #ffffff;
+  color: #000000;
+  border-radius: 1rem;
+  font-weight: 700;
+  padding: 0.75rem 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+.btn-primary:hover{ opacity: 0.92; }
+.btn-primary:active{ transform: translateY(1px); }
+.btn-primary:focus-visible{
+  outline: 2px solid rgba(0,214,255,0.55);
+  outline-offset: 3px;
+}
+
+.btn-ghost{
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.85);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 1rem;
+  font-weight: 700;
+  padding: 0.75rem 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+.btn-ghost:hover{
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(255,255,255,0.16);
+}
+.btn-ghost:focus-visible{
+  outline: 2px solid rgba(111,76,255,0.55);
+  outline-offset: 3px;
+}
+
+.btn-disabled{
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 1rem;
+  padding: 0.75rem 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: not-allowed;
+  user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .btn-primary, .btn-ghost { transition: none; }
+}

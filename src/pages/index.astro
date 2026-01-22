@@ -1,17 +1,225 @@
 ---
+import Base from "../layouts/Base.astro";
+import logo from "../assets/images/logo.png";
 
+const apps = [
+  {
+    name: "Sigil Synth",
+    tagline: "Image-driven loop generator",
+    desc: "Turn images into evolving sound loops. Upload, analyze, play, export. A symbolic instrument disguised as a utility.",
+    status: "Android — coming soon",
+    featured: true,
+  },
+  {
+    name: "Spirit Box",
+    tagline: "Radio drift + chance encounters",
+    desc: "Scan internet radio streams and stumble into patterns. Built for curiosity, not certainty.",
+    status: "Android — coming soon",
+    featured: false,
+  },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base
+  title="In-Between Labs"
+  description="A small studio shipping odd, useful Android tools. Built from experiments. Refined into instruments."
+  canonical="https://inbetweenlabs.com/"
+>
+  <main class="min-h-screen">
+    <!-- Header (mobile-first) -->
+    <header class="container pt-4 sm:pt-6">
+      <nav class="card px-4 py-3 sm:px-5 sm:py-4">
+        <div class="flex items-center justify-between gap-3">
+          <!-- Brand -->
+          <a href="/" class="flex items-center gap-3 min-w-0">
+            <img
+              src={logo.src}
+              width="40"
+              height="40"
+              alt="In-Between Labs logo"
+              class="shrink-0 rounded-xl border border-white/10 bg-white/5 p-2"
+              loading="eager"
+              decoding="async"
+            />
+            <div class="min-w-0 leading-tight">
+              <div class="font-semibold tracking-tight truncate">In-Between Labs</div>
+              <div class="text-xs text-white/60 truncate">small tools • shipped experiments</div>
+            </div>
+          </a>
+
+          <!-- Contact (shrinks nicely on mobile) -->
+          <a href="#contact" class="btn-primary px-4 py-2 text-sm sm:text-base sm:px-5 sm:py-3">
+            Contact
+          </a>
+        </div>
+
+        <!-- Nav pills: wrap cleanly under brand on small screens -->
+        <div class="mt-3 flex flex-wrap gap-2">
+          <a
+            href="#apps"
+            class="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white/80 hover:bg-white/10"
+          >
+            Apps
+          </a>
+          <a
+            href="#ethos"
+            class="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white/80 hover:bg-white/10"
+          >
+            Ethos
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="container pt-8 sm:pt-14 pb-10">
+      <div class="card glow p-6 sm:p-8 md:p-12">
+        <div class="max-w-3xl">
+          <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">
+            <span class="h-2 w-2 rounded-full" style="background: var(--cyan)"></span>
+            Experimental Android tools • ad-supported + one-time “no distractions” unlock
+          </p>
+
+          <h1 class="mt-5 text-4xl md:text-6xl font-semibold tracking-tight">
+            Tools for the space between idea and artifact.
+          </h1>
+
+          <p class="mt-4 text-base md:text-lg text-white/70 leading-relaxed">
+            In-Between Labs builds small, strange utilities for creators — instruments that start as experiments and get refined until they feel inevitable.
+          </p>
+
+          <div class="mt-7 flex flex-col sm:flex-row gap-3">
+            <a href="#apps" class="btn-primary">Explore the experiments</a>
+            <a href="#ethos" class="btn-ghost">The lab ethos</a>
+          </div>
+
+          <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-white/70">
+            <div class="card p-4">
+              <div class="font-semibold text-white/90">Single-purpose</div>
+              <div class="mt-1 text-white/65">One tool, one flow, no bloat.</div>
+            </div>
+            <div class="card p-4">
+              <div class="font-semibold text-white/90">Offline-first</div>
+              <div class="mt-1 text-white/65">Works without accounts where possible.</div>
+            </div>
+            <div class="card p-4">
+              <div class="font-semibold text-white/90">Respectful monetization</div>
+              <div class="mt-1 text-white/65">Ads or one-time unlock. No subscriptions.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Apps -->
+    <section id="apps" class="container py-12">
+      <div class="flex items-end justify-between gap-6">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">Current builds</h2>
+          <p class="mt-2 text-white/70 max-w-2xl">
+            Early releases are intentionally tight. Each app is a single instrument with a clear ritual.
+          </p>
+        </div>
+        <div class="hidden md:block text-sm text-white/60">Play Store listings coming soon</div>
+      </div>
+
+      <div class="mt-7 grid grid-cols-1 md:grid-cols-2 gap-5">
+        {apps.map((app) => (
+          <div class={`card p-7 ${app.featured ? "glow" : ""}`}>
+            <div class="flex items-center justify-between gap-4">
+              <div>
+                <div class="text-xl font-semibold tracking-tight">{app.name}</div>
+                <div class="mt-1 text-sm text-white/60">{app.tagline}</div>
+              </div>
+
+              <div class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">
+                <span
+                  class="inline-block h-2 w-2 rounded-full mr-2 align-middle"
+                  style={`background:${app.featured ? "var(--cyan)" : "rgba(255,255,255,0.45)"}`}
+                ></span>
+                {app.status}
+              </div>
+            </div>
+
+            <p class="mt-4 text-white/70 leading-relaxed">{app.desc}</p>
+
+            <div class="mt-6 flex flex-wrap gap-3">
+              <div class="btn-disabled" title="Link will be added when live">View on Google Play</div>
+              <a href="#contact" class="btn-primary">Request a feature</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Ethos -->
+    <section id="ethos" class="container py-12">
+      <div class="card p-8 md:p-12">
+        <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">The lab ethos</h2>
+
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-5 text-white/70">
+          <div class="card p-5" style="background: var(--panel2)">
+            <div class="font-semibold text-white/90">Start with the strange</div>
+            <p class="mt-2 leading-relaxed">
+              We prototype the odd idea first. If it has a pulse, we refine until it’s usable.
+            </p>
+          </div>
+
+          <div class="card p-5" style="background: var(--panel2)">
+            <div class="font-semibold text-white/90">Protect the flow</div>
+            <p class="mt-2 leading-relaxed">
+              If something disrupts the ritual, it doesn’t belong. The one-time unlock stays sacred.
+            </p>
+          </div>
+
+          <div class="card p-5" style="background: var(--panel2)">
+            <div class="font-semibold text-white/90">Ship small, iterate honestly</div>
+            <p class="mt-2 leading-relaxed">
+              Fewer features. Fewer promises. More trust. Updates are earned through use.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5 text-white/70">
+          <div class="font-semibold text-white/90">Monetization, plainly</div>
+          <p class="mt-2 leading-relaxed">
+            Every tool is fully usable with ads. A one-time unlock removes distractions permanently and supports ongoing development.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="container py-12 pb-20">
+      <div class="card p-8 md:p-12">
+        <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">Contact</h2>
+        <p class="mt-2 text-white/70 max-w-2xl">
+          Want a feature, a collaboration, or early access? Reach out.
+        </p>
+
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div class="card p-6" style="background: var(--panel2)">
+            <div class="text-sm text-white/60">Email</div>
+            <div class="mt-2 text-lg font-semibold text-white/90">you@inbetweenlabs.com</div>
+            <p class="mt-3 text-sm text-white/65">Replace this with your real inbox when you’re ready.</p>
+          </div>
+
+          <div class="card p-6" style="background: var(--panel2)">
+            <div class="text-sm text-white/60">Press / kit</div>
+            <div class="mt-2 text-white/80">Add logos, screenshots, and a one-paragraph story here later.</div>
+            <p class="mt-3 text-sm text-white/65">This helps a lot once you start running app campaigns.</p>
+          </div>
+        </div>
+
+        <footer class="mt-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-sm text-white/55">
+          <div>© {new Date().getFullYear()} In-Between Labs</div>
+          <div class="flex gap-4">
+            <a class="hover:text-white/80" href="#apps">Apps</a>
+            <a class="hover:text-white/80" href="#ethos">Ethos</a>
+            <a class="hover:text-white/80" href="#contact">Contact</a>
+          </div>
+        </footer>
+      </div>
+    </section>
+  </main>
+</Base>
