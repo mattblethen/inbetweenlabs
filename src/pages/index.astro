@@ -1,21 +1,16 @@
 ---
 import Base from "../layouts/Base.astro";
 import logo from "../assets/images/logo.png";
+import sigilSynthIcon from "../assets/images/Sigil Synth.jpg";
 
 const apps = [
   {
     name: "Sigil Synth",
     tagline: "Image-driven loop generator",
     desc: "Turn images into evolving sound loops. Upload, analyze, play, export. A symbolic instrument disguised as a utility.",
-    status: "Android - coming soon",
+    status: "Android — coming soon",
     featured: true,
-  },
-  {
-    name: "Spirit Box",
-    tagline: "Radio drift + chance encounters",
-    desc: "Scan internet radio streams and stumble into patterns. Built for curiosity, not certainty.",
-    status: "Android - coming soon",
-    featured: false,
+    icon: sigilSynthIcon,
   },
 ];
 ---
@@ -43,7 +38,7 @@ const apps = [
             />
             <div class="min-w-0 leading-tight">
               <div class="font-semibold tracking-tight truncate">In-Between Labs</div>
-              <div class="text-xs text-white/60 truncate">small tools - shipped experiments</div>
+              <div class="text-xs text-white/60 truncate">small tools — shipped experiments</div>
             </div>
           </a>
 
@@ -77,7 +72,7 @@ const apps = [
         <div class="max-w-3xl">
           <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">
             <span class="h-2 w-2 rounded-full" style="background: var(--cyan)"></span>
-            Experimental Android tools - ad-supported + one-time -no distractions- unlock
+            Experimental Android tools — ad-supported + one-time “no distractions” unlock
           </p>
 
           <h1 class="mt-5 text-4xl md:text-6xl font-semibold tracking-tight">
@@ -85,7 +80,8 @@ const apps = [
           </h1>
 
           <p class="mt-4 text-base md:text-lg text-white/70 leading-relaxed">
-            In-Between Labs builds small, strange utilities for creators - instruments that start as experiments and get refined until they feel inevitable.
+            In-Between Labs builds small, strange utilities for creators — instruments that start as experiments and get
+            refined until they feel inevitable.
           </p>
 
           <div class="mt-7 flex flex-col sm:flex-row gap-3">
@@ -120,19 +116,31 @@ const apps = [
             Early releases are intentionally tight. Each app is a single instrument with a clear ritual.
           </p>
         </div>
-        <div class="hidden md:block text-sm text-white/60">Play Store listings coming soon</div>
+        <div class="hidden md:block text-sm text-white/60">Play Store listing coming soon</div>
       </div>
 
       <div class="mt-7 grid grid-cols-1 md:grid-cols-2 gap-5">
         {apps.map((app) => (
           <div class={`card p-7 ${app.featured ? "glow" : ""}`}>
-            <div class="flex items-center justify-between gap-4">
-              <div>
-                <div class="text-xl font-semibold tracking-tight">{app.name}</div>
-                <div class="mt-1 text-sm text-white/60">{app.tagline}</div>
+            <div class="flex items-start justify-between gap-4">
+              <div class="flex items-center gap-4 min-w-0">
+                <img
+                  src={app.icon.src}
+                  width="56"
+                  height="56"
+                  alt={`${app.name} icon`}
+                  class="shrink-0 rounded-2xl border border-white/10 bg-white/5 object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+
+                <div class="min-w-0">
+                  <div class="text-xl font-semibold tracking-tight truncate">{app.name}</div>
+                  <div class="mt-1 text-sm text-white/60 truncate">{app.tagline}</div>
+                </div>
               </div>
 
-              <div class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">
+              <div class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70 whitespace-nowrap">
                 <span
                   class="inline-block h-2 w-2 rounded-full mr-2 align-middle"
                   style={`background:${app.featured ? "var(--cyan)" : "rgba(255,255,255,0.45)"}`}
@@ -161,14 +169,14 @@ const apps = [
           <div class="card p-5" style="background: var(--panel2)">
             <div class="font-semibold text-white/90">Start with the strange</div>
             <p class="mt-2 leading-relaxed">
-              We prototype the odd idea first. If it has a pulse, we refine until it-s usable.
+              We prototype the odd idea first. If it has a pulse, we refine until it’s usable.
             </p>
           </div>
 
           <div class="card p-5" style="background: var(--panel2)">
             <div class="font-semibold text-white/90">Protect the flow</div>
             <p class="mt-2 leading-relaxed">
-              If something disrupts the ritual, it doesn-t belong. The one-time unlock stays sacred.
+              If something disrupts the ritual, it doesn’t belong. The one-time unlock stays sacred.
             </p>
           </div>
 
@@ -183,7 +191,8 @@ const apps = [
         <div class="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5 text-white/70">
           <div class="font-semibold text-white/90">Monetization, plainly</div>
           <p class="mt-2 leading-relaxed">
-            Every tool is fully usable with ads. A one-time unlock removes distractions permanently and supports ongoing development.
+            Every tool is fully usable with ads. A one-time unlock removes distractions permanently and supports ongoing
+            development.
           </p>
         </div>
       </div>
@@ -200,8 +209,8 @@ const apps = [
         <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-5">
           <div class="card p-6" style="background: var(--panel2)">
             <div class="text-sm text-white/60">Email</div>
-            <div class="mt-2 text-lg font-semibold text-white/90">you@inbetweenlabs.com</div>
-            <p class="mt-3 text-sm text-white/65">Replace this with your real inbox when you-re ready.</p>
+            <div class="mt-2 text-lg font-semibold text-white/90">inbetweenlabs@gmail.com</div>
+            <p class="mt-3 text-sm text-white/65">Replace this with your real inbox when you’re ready.</p>
           </div>
 
           <div class="card p-6" style="background: var(--panel2)">
@@ -212,7 +221,7 @@ const apps = [
         </div>
 
         <footer class="mt-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-sm text-white/55">
-          <div>- {new Date().getFullYear()} In-Between Labs</div>
+          <div>© {new Date().getFullYear()} In-Between Labs</div>
           <div class="flex gap-4">
             <a class="hover:text-white/80" href="#apps">Apps</a>
             <a class="hover:text-white/80" href="#ethos">Ethos</a>
