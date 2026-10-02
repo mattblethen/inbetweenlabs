@@ -1,0 +1,48 @@
+---
+import Base from "./Base.astro";
+import logo from "../assets/images/logo.png";
+
+const { title, description, canonical } = Astro.props;
+---
+
+<Base title={title} description={description} canonical={canonical}>
+  <div class="min-h-screen">
+    <header class="container pt-4 sm:pt-6">
+      <nav aria-label="Main navigation" class="card px-4 py-4 sm:px-6">
+        <a href="/" class="inline-flex items-center gap-3">
+          <img
+            src={logo.src}
+            width="40"
+            height="40"
+            alt="In-Between Labs logo"
+            class="shrink-0 rounded-xl border border-white/10 bg-white/5 p-2"
+            decoding="async"
+          />
+          <span class="font-semibold tracking-tight">In-Between Labs</span>
+        </a>
+        <div class="mt-4 flex flex-wrap gap-3 text-sm">
+          <a href="/pi-drive-transfer" class="btn-ghost">Pi Drive Transfer</a>
+          <a href="/pi-drive-transfer/privacy" class="btn-ghost">Privacy notice</a>
+          <a href="mailto:inbetweenlabs@gmail.com" class="btn-ghost">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container py-8 sm:py-12">
+      <div class="mx-auto max-w-4xl">
+        <slot />
+      </div>
+    </main>
+
+    <footer class="container pb-10 text-sm text-white/60">
+      <div class="mx-auto flex max-w-4xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <p>&copy; {new Date().getFullYear()} In-Between Labs</p>
+        <div class="flex flex-wrap gap-4">
+          <a class="underline underline-offset-4 hover:text-white" href="/">Lab home</a>
+          <a class="underline underline-offset-4 hover:text-white" href="/pi-drive-transfer/privacy">Pi Drive Transfer privacy</a>
+          <a class="underline underline-offset-4 hover:text-white" href="mailto:inbetweenlabs@gmail.com">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</Base>

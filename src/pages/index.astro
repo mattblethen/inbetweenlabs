@@ -160,6 +160,22 @@ const apps = [
       </div>
     </section>
 
+    <!-- Personal tools -->
+    <section aria-labelledby="personal-tools-title" class="container py-12">
+      <div class="card p-8 md:p-12">
+        <p class="text-sm text-white/60">Personal tools</p>
+        <h2 id="personal-tools-title" class="mt-2 text-2xl md:text-3xl font-semibold tracking-tight">Pi Drive Transfer</h2>
+        <p class="mt-4 max-w-2xl text-white/70 leading-relaxed">
+          Matt's personal Google Drive backup and download utility, using rclone on his own Raspberry Pi
+          with read-only Drive access. For single-user personal use; not a public backup service.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="/pi-drive-transfer" class="btn-primary">About Pi Drive Transfer</a>
+          <a href="/pi-drive-transfer/privacy" class="btn-ghost">Pi Drive Transfer privacy</a>
+        </div>
+      </div>
+    </section>
+
     <!-- Ethos -->
     <section id="ethos" class="container py-12">
       <div class="card p-8 md:p-12">
@@ -191,7 +207,7 @@ const apps = [
         <div class="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5 text-white/70">
           <div class="font-semibold text-white/90">Monetization, plainly</div>
           <p class="mt-2 leading-relaxed">
-            Every tool is fully usable with ads. A one-time unlock removes distractions permanently and supports ongoing
+            Our Android tools are fully usable with ads. A one-time unlock removes distractions permanently and supports ongoing
             development.
           </p>
         </div>
@@ -222,10 +238,11 @@ const apps = [
 
         <footer class="mt-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-sm text-white/55">
           <div>© {new Date().getFullYear()} In-Between Labs</div>
-          <div class="flex gap-4">
+          <div class="flex flex-wrap gap-4">
             <a class="hover:text-white/80" href="#apps">Apps</a>
             <a class="hover:text-white/80" href="#ethos">Ethos</a>
             <a class="hover:text-white/80" href="#contact">Contact</a>
+            <a class="hover:text-white/80" href="/pi-drive-transfer">Pi Drive Transfer</a>
             <a class="hover:text-white/80" href="/privacy-policy">Privacy Policy</a>
           </div>
         </footer>
