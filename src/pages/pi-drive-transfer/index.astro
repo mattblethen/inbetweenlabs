@@ -1,0 +1,72 @@
+---
+import PiDriveTransfer from "../../layouts/PiDriveTransfer.astro";
+---
+
+<PiDriveTransfer
+  title="Pi Drive Transfer - In-Between Labs"
+  description="Matt Blethen's personal Google Drive backup and download utility, using rclone on his own Raspberry Pi with read-only Drive access."
+  canonical="https://inbetweenlabs.com/pi-drive-transfer"
+>
+  <section aria-labelledby="tool-title" class="card glow p-6 sm:p-8 md:p-12">
+    <p class="inline-flex rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">
+      Personal utility · Single-user use
+    </p>
+    <h1 id="tool-title" class="mt-5 text-4xl sm:text-5xl font-semibold tracking-tight">Pi Drive Transfer</h1>
+    <p class="mt-4 text-lg text-white/80 leading-relaxed">
+      Personal Google Drive downloads, on Matt's own storage.
+    </p>
+    <p class="mt-4 text-white/70 leading-relaxed">
+      Pi Drive Transfer is Matt Blethen's personal file backup and download utility. It uses the third-party,
+      open-source <a href="https://rclone.org/" class="underline underline-offset-4 hover:text-white">rclone</a>
+      tool on his own Raspberry Pi to connect directly to the Google Drive API and download selected personal
+      files onto storage he owns.
+    </p>
+    <p class="mt-4 text-white/70 leading-relaxed">
+      Matt owns and operates the Google OAuth client named Pi Drive Transfer. The utility is for his own use;
+      it is not offered as a public backup service. This website provides information about the utility and
+      does not connect visitors' Google Drive accounts.
+    </p>
+    <div class="mt-7 flex flex-wrap gap-3">
+      <a href="/pi-drive-transfer/privacy" class="btn-primary">Read the privacy notice</a>
+      <a href="mailto:inbetweenlabs@gmail.com" class="btn-ghost">Contact Matt</a>
+    </div>
+  </section>
+
+  <section aria-labelledby="access-title" class="mt-6 card p-6 sm:p-8">
+    <h2 id="access-title" class="text-2xl font-semibold tracking-tight">How Google Drive access works</h2>
+    <div class="mt-4 space-y-4 text-white/70 leading-relaxed">
+      <p>
+        Google authorization is handled through rclone. The requested permission is
+        <code class="break-all text-white/90">https://www.googleapis.com/auth/drive.readonly</code>.
+        It allows reading and downloading Drive file contents and metadata across the connected account's
+        Drive, even though Matt chooses which files to download. It does not permit uploading, changing,
+        or deleting Drive files.
+      </p>
+      <p>
+        OAuth tokens are stored in the local rclone configuration for ongoing access. Downloaded files stay
+        on Matt's own storage until he deletes them. No Drive files or OAuth credentials are collected by
+        this public website, and no custom application server receives visitors' Drive data.
+      </p>
+      <p>
+        Drive data is used only for this personal download and backup workflow. It is not sold, used for
+        advertising, or used to train AI models. Google Drive desktop uploads on Matt's separate computer
+        use the official Google Drive app and are outside Pi Drive Transfer.
+      </p>
+    </div>
+  </section>
+
+  <section aria-labelledby="control-title" class="mt-6 card p-6 sm:p-8">
+    <h2 id="control-title" class="text-2xl font-semibold tracking-tight">Control and contact</h2>
+    <p class="mt-4 text-white/70 leading-relaxed">
+      Access can be removed through
+      <a href="https://myaccount.google.com/connections" class="underline underline-offset-4 hover:text-white">Google Account connections</a>.
+      Removing access stops future authorized transfers; existing local copies must be deleted separately.
+      The <a href="/pi-drive-transfer/privacy" class="underline underline-offset-4 hover:text-white">privacy notice</a>
+      explains access, storage, retention, and deletion in more detail.
+    </p>
+    <p class="mt-4 text-white/70 leading-relaxed">
+      Owner and developer: Matt Blethen / In-Between Labs.<br />
+      Questions: <a href="mailto:inbetweenlabs@gmail.com" class="break-all underline underline-offset-4 hover:text-white">inbetweenlabs@gmail.com</a>.
+    </p>
+  </section>
+</PiDriveTransfer>
