@@ -4,73 +4,122 @@ import Base from "../layouts/Base.astro";
 
 <Base
   title="Privacy Policy – In-Between Labs"
-  description="Privacy policy for In-Between Labs Android applications, including Sigil Synth."
+  description="How Sigil Synth processes images and music locally and handles advertising data and privacy choices."
   canonical="https://inbetweenlabs.com/privacy-policy"
 >
   <main class="container py-12 max-w-3xl">
     <div class="card p-8 md:p-12">
       <h1 class="text-3xl font-semibold tracking-tight">Privacy Policy</h1>
-      <p class="mt-2 text-white/60 text-sm">Last updated: {new Date().toLocaleDateString()}</p>
+      <p class="mt-2 text-white/60 text-sm">Last updated: October 14, 2026</p>
 
       <div class="mt-8 space-y-6 text-white/70 leading-relaxed">
         <p>
-          This policy covers our Android apps, including Sigil Synth. Pi Drive Transfer is a separate personal
+          This policy covers Sigil Synth, an Android image-to-music app published by In-Between Labs.
+          Pi Drive Transfer is a separate personal
           utility with its own <a href="/pi-drive-transfer/privacy" class="underline underline-offset-4 hover:text-white">privacy notice</a>.
         </p>
 
+        <h2 class="text-xl font-semibold text-white/90">Images, music and app accounts</h2>
         <p>
-          In-Between Labs builds small, offline-first creative tools. Your privacy matters. This policy explains what
-          information is collected and how it is used in our applications.
+          Sigil Synth analyzes your selected images and generates music locally on your device. It stores temporary
+          preview audio in its cache and saves WAV exports to your device's music storage. The app's music tools do not
+          upload your selected images or generated audio to In-Between Labs servers. Your document provider,
+          device backup service and device settings may have their own data practices.
+        </p>
+        <p>
+          You do not need an app account to use Sigil Synth. The app does not ask for your name, email address or
+          phone number to create music. If you contact us by email, we receive the address and information you send
+          and use them to respond to your request.
         </p>
 
-        <h2 class="text-xl font-semibold text-white/90">Information We Collect</h2>
+        <h2 class="text-xl font-semibold text-white/90">Advertising and data sharing</h2>
         <p>
-          Our apps do not require user accounts and do not collect personally identifiable information such as your
-          name, email address, or phone number.
+          Sigil Synth displays ads through Google AdMob and the Google Mobile Ads SDK. Advertising involves data
+          collection and sharing with Google and applicable advertising partners, even though your creative media
+          is processed locally. These advertising identifiers and activity data are not necessarily anonymous.
+        </p>
+        <p>
+          Depending on your device, region, privacy choices and advertising configuration, advertising services
+          may collect and share your IP address, device or other identifiers, app and ad interactions, and diagnostic
+          and performance information. An IP address may be used to estimate approximate location. Identifiers may
+          include the Android advertising ID when available and permitted, app set ID and publisher first-party ID.
+          These data support advertising, measurement and analytics, and security and fraud prevention, as applicable.
+          App set ID supports reporting and fraud prevention rather than advertising personalization.
+        </p>
+        <p>
+          Sigil Synth does not request Android precise-location permission. The consent message describes the
+          partners' declared purposes and any special features for which they request permission; this does not mean
+          that the app supplies every category a partner declares.
+        </p>
+        <p>
+          Where a European consent message is shown, use <strong>Manage options</strong> and its partner list to see
+          the advertising partners, their privacy policies, purposes and available choices. AdMob's partner list can
+          change over time. Google documents its data handling in its
+          <a href="https://developers.google.com/admob/android/privacy/play-data-disclosure" class="underline underline-offset-4 hover:text-white">Mobile Ads SDK data disclosure</a>,
+          <a href="https://policies.google.com/privacy" class="underline underline-offset-4 hover:text-white">Privacy Policy</a>
+          and
+          <a href="https://policies.google.com/technologies/partner-sites" class="underline underline-offset-4 hover:text-white">information about partner apps</a>.
+          Google states that data collected by its Mobile Ads SDK is encrypted in transit using TLS.
         </p>
 
+        <h2 class="text-xl font-semibold text-white/90">Your advertising privacy choices</h2>
         <p>
-          Images, audio, and other media you load into the app are processed locally on your device. We do not upload,
-          store, or transmit this content to our servers.
+          We use Google's User Messaging Platform for applicable privacy messages. Our European message is targeted
+          to users in the EEA, United Kingdom and Switzerland and offers <strong>Consent</strong>,
+          <strong>Do not consent</strong> and <strong>Manage options</strong>. You can choose the purposes and partners
+          for which you grant consent and object to processing shown as legitimate interest. Some essential purposes,
+          such as security and communicating privacy choices, cannot be switched off in the message.
+        </p>
+        <p>
+          In app versions that include consent controls, use <strong>Ad privacy choices</strong> when available to
+          review, change or withdraw your choices. The <strong>Privacy policy</strong> entry links to this page.
+          Those versions check Google's
+          ad-eligibility result before requesting ads; declining consent does not necessarily prevent all limited
+          or non-personalized ads or all related data processing. The music tools remain usable when advertising
+          is unavailable.
+        </p>
+        <p>
+          Android's advertising settings may let you reset or delete your advertising ID. This does not necessarily
+          stop other SDK identifiers or data handling.
         </p>
 
-        <h2 class="text-xl font-semibold text-white/90">Advertising</h2>
+        <h2 class="text-xl font-semibold text-white/90">Diagnostics and analytics</h2>
         <p>
-          Some apps may display ads provided by Google AdMob. AdMob may collect anonymous usage data or device
-          identifiers in accordance with Google’s privacy policies in order to serve relevant ads.
+          Sigil Synth does not integrate a separate custom analytics service. Google Mobile Ads and related services
+          can nevertheless process app and ad interactions, SDK diagnostics and performance information. Android
+          and Google Play may also process diagnostic information under their own settings and policies.
         </p>
 
+        <h2 class="text-xl font-semibold text-white/90">Storage, retention and requests</h2>
         <p>
-          You may remove ads permanently via a one-time in-app purchase where offered.
+          Temporary preview files remain in app storage until removed by the app or Android storage controls.
+          Exported music remains in device music storage until removed and may remain after uninstalling.
+          You can manage local data using Android's app-storage and file tools. Backup or document providers may
+          retain their own copies under their policies.
+        </p>
+        <p>
+          Google and other advertising partners determine retention for the advertising data they process under
+          their policies. Consent choices are stored on your device by Google's consent platform and can be
+          replaced when you change them. Withdrawing consent does not itself delete data already held by a provider.
+        </p>
+        <p>
+          Contact us with privacy questions or data requests at
+          <a href="mailto:inbetweenlabs@gmail.com" class="underline underline-offset-4 hover:text-white">inbetweenlabs@gmail.com</a>.
+          Tell us which app and request you mean. We can address our own practices and information we hold;
+          requests concerning provider-held advertising data may also need to be directed to that provider through
+          the privacy policies linked above or in the consent message.
         </p>
 
-        <h2 class="text-xl font-semibold text-white/90">Analytics</h2>
+        <h2 class="text-xl font-semibold text-white/90">Children's privacy</h2>
         <p>
-          We do not use custom analytics or tracking systems. Any limited diagnostic data collected is handled by the
-          Android operating system or Google Play services.
+          Sigil Synth is not directed toward children under 13. If you believe a child has provided personal
+          information to us, please contact us using the address above.
         </p>
 
-        <h2 class="text-xl font-semibold text-white/90">Data Sharing</h2>
+        <h2 class="text-xl font-semibold text-white/90">Policy changes</h2>
         <p>
-          We do not sell, trade, or share your personal data with third parties.
-        </p>
-
-        <h2 class="text-xl font-semibold text-white/90">Children’s Privacy</h2>
-        <p>
-          Our apps are not directed toward children under 13. We do not knowingly collect personal information from
-          children.
-        </p>
-
-        <h2 class="text-xl font-semibold text-white/90">Changes to This Policy</h2>
-        <p>
-          This policy may be updated as our apps evolve. Any changes will be reflected on this page.
-        </p>
-
-        <h2 class="text-xl font-semibold text-white/90">Contact</h2>
-        <p>
-          If you have questions about this privacy policy, you can contact us at:
-          <br />
-          <span class="text-white/90 font-semibold">inbetweenlabs@gmail.com</span>
+          We may update this policy when the app or its data practices change. The date above identifies the latest
+          policy update.
         </p>
       </div>
 
@@ -80,3 +129,4 @@ import Base from "../layouts/Base.astro";
     </div>
   </main>
 </Base>
+
